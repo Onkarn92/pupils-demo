@@ -1,22 +1,28 @@
 package com.bridge.androidtechnicaltest
 
 import android.app.Application
-import com.bridge.androidtechnicaltest.di.databaseModule
-import com.bridge.androidtechnicaltest.di.networkModule
-import org.koin.android.ext.koin.androidContext
-import org.koin.core.context.startKoin
-import org.koin.core.module.Module
+import android.content.Context
+import androidx.appcompat.app.AppCompatDelegate
 
 class App : Application() {
-
-    private val appComponent : MutableList<Module> = mutableListOf(networkModule, databaseModule)
-
-    override fun onCreate() {
-        super.onCreate()
-
-        startKoin {
-            androidContext(applicationContext)
-            modules(appComponent)
-        }
-    }
+	
+	companion object {
+		
+		private lateinit var app: App
+		
+		/**
+		 * @return current context of this application
+		 */
+		@JvmStatic
+		fun getContext(): Context = app.applicationContext
+		
+		@JvmStatic
+		fun getApplication(): App = app
+	}
+	
+	override fun onCreate() {
+		super.onCreate()
+		app = this
+		AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
+	}
 }
