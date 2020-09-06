@@ -72,6 +72,7 @@ dependencies {
 	
 	// Testing
 	testImplementation "junit:junit:${junit_version}"
+	testImplementation "com.squareup.okhttp3:mockwebserver:${mock_version}"
 	androidTestImplementation "androidx.test.ext:junit:${test_runner_version}"
 	androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_core_version}"
 	androidTestImplementation "androidx.test:runner:${test_version}"
