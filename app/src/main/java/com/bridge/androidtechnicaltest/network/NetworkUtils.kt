@@ -52,7 +52,7 @@ object NetworkUtils {
 	 *
 	 * @return true if response is valid, otherwise false.
 	 */
-	fun isValidResponse(response: Response<*>): Boolean = response.isSuccessful && response.body() != null
+	fun isValidResponse(response: Response<*>): Boolean = response.isSuccessful
 	
 	/**
 	 * Identify failure reason based on HTTP status codes.
