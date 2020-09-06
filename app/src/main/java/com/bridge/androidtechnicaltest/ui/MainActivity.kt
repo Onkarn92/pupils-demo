@@ -2,6 +2,7 @@ package com.bridge.androidtechnicaltest.ui
 
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity(), PupilAdapter.Callback, OnRefreshListen
 	}
 	
 	override fun onItemClick(pupil: Pupil) {
-		//TODO("Not yet implemented")
+		Toast.makeText(this, "Not yet implemented!", Toast.LENGTH_SHORT).show()
 	}
 	
 	override fun onDelete(pupil: Pupil) {
